@@ -1,0 +1,25 @@
+#################################
+# Syntax Coloring Map For Recoder
+#################################
+
+#################################
+# Datatypes
+#################################
+
+Recoder	KEYWORD1
+
+#################################
+# Methods and Functions
+#################################
+readButton	KEYWORD2
+readMovement	KEYWORD2
+
+#################################
+# Constants (LITERAL1)
+#################################
+RECODER_NIL	LITERAL1
+RECODER_CW	LITERAL1
+RECODER_CCW	LITERAL1
+RECODER_PRESS	LITERAL1
+RECODER_PRESS_AND_HOLD	LITERAL1
+
