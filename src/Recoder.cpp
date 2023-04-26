@@ -7,7 +7,7 @@
 
 #define RECODER_DEBOUNCE_TIME   200
 #define RECODER_P_AND_H_TIMEOUT 2000
-#define DEFAULT_PRESS_AND_HOLD_THRESHOLD 1500
+#define DEFAULT_PRESS_AND_HOLD_THRESHOLD 1000
 
 // good thing for tab completion!
 #define INTERNAL_RECODER_START     0x0
@@ -22,7 +22,7 @@
 // Good thing this library is GPL-3!
 // We can straight up lift the (great) code to read movement by
 // Ben Buxton (gh:buxtronix/arduino/tree/master/libraries/Rotary)
-const unsigned char ttable[7][4] = {
+const uint8_t ttable[7][4] = {
   {INTERNAL_RECODER_START, INTERNAL_RECODER_CW_BEGIN,
       INTERNAL_RECODER_CCW_BEGIN, INTERNAL_RECODER_START},
   {INTERNAL_RECODER_CW_NEXT, INTERNAL_RECODER_START,
@@ -47,7 +47,7 @@ Recoder::Recoder(uint8_t _clk, uint8_t _dt, uint8_t _sw) {
 }
 
 Recoder::Recoder(uint8_t _clk, uint8_t _dt, uint8_t _sw,
-                 uint16_t _hold_threshold=1500) {
+                 uint16_t _hold_threshold) {
     init(_clk, _dt, _sw, _hold_threshold);
 }
 
