@@ -21,25 +21,25 @@ Recoder recoder(RE_CLK, RE_DT_LAG, RE_SW_BUTTON);
 
 
 void update_re() {
-    uint8_t mres = recoder.readMovement();
-    uint8_t bres = recoder.readButton();
+    const REEvent mres = recoder.readMovement();
+    const REEvent bres = recoder.readButton();
 
     // movement
     switch (mres) {
-        case RECODER_CW:
+        case REEvent::RECODER_CW:
             Serial.println("clockwise");
             return;
-        case RECODER_CCW:
+        case REEvent::RECODER_CCW:
             Serial.println("counter clockwise");
             return;
     }
 
     // button
     switch (bres) {
-        case RECODER_PRESS:
+        case REEvent::RECODER_PRESS:
             Serial.println("sw button press!");
             break;
-        case RECODER_PRESS_AND_HOLD:
+        case REEvent::RECODER_PRESS_AND_HOLD:
             Serial.println("pressed _AND_ held");
             break;
     }
